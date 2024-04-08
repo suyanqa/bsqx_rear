@@ -29,16 +29,20 @@ public class CustomerController {
     @PostMapping("/add")
     public ApiResponse<Void> addCustomer(@RequestBody Customer customer) {
         System.out.println("/customer/add被请求.....");
+
+        // 检查必填字段是否为空
+        if (customer.getName() == null || customer.getName().isEmpty()) {
+            return new ApiResponse(false, "添加客户失败", "客户姓名不能为空");
+        }
+
         try {
             // 调用服务层方法，将客户数据插入数据库
             customerService.addCustomer(customer);
             return new ApiResponse(true, "添加客户成功", "恭喜小主又多一位客户");
         } catch (Exception e) {
             System.out.println(e.getMessage());
-            return new ApiResponse(false, "添加客户失败", "检查表单是否填写完整");
+            return new ApiResponse(false, "添加客户失败", "添加客户时发生错误");
         }
     }
+
 }
-
-
-
