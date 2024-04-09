@@ -15,15 +15,27 @@ import org.springframework.stereotype.Service;
  * @IDE ：IntelliJ IDEA 2021.2.2
  * @Motto ：ABC(Always Be Coding)
  */
-// CustomerServiceImpl.java
+
 @Service
 public class CustomerServiceImpl implements CustomerService {
+
+    private final CustomerRepository customerRepository;
+
     @Autowired
-    private CustomerRepository customerRepository;
+    public CustomerServiceImpl(CustomerRepository customerRepository) {
+        this.customerRepository = customerRepository;
+    }
+
+    @Override
+    // 检查数据库中是否已存在相同的用户
+    public boolean isCustomerExists(Customer customer) {
+        // 根据姓名和联系方式查询客户
+        Customer existingCustomer = customerRepository.findByNameAndContactNumber(customer.getName(), customer.getContactNumber());
+        return existingCustomer != null;
+    }
 
     @Override
     public void addCustomer(Customer customer) {
         customerRepository.save(customer);
     }
 }
-

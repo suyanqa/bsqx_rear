@@ -14,4 +14,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
  * @Motto ：ABC(Always Be Coding)
  */
 public interface CustomerRepository  extends JpaRepository<Customer,Long> {
+    // 根据姓名和联系方式查找客户
+    Customer findByNameAndContactNumber(String name, String contactNumber);
 }

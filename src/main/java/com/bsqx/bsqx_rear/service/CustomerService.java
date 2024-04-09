@@ -12,9 +12,11 @@ import com.bsqx.bsqx_rear.DTO.Customer;
  * @IDE ：IntelliJ IDEA 2021.2.2
  * @Motto ：ABC(Always Be Coding)
  */
-// CustomerService.java
-// CustomerService.java
 public interface CustomerService {
- void addCustomer(Customer customer);
-}
 
+    // 检查数据库中是否已存在相同的用户
+    boolean isCustomerExists(Customer customer);
+
+    // 添加客户
+    void addCustomer(Customer customer);
+}

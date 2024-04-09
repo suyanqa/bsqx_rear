@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @IDE ：IntelliJ IDEA 2021.2.2
  * @Motto ：ABC(Always Be Coding)
  */
+
 @RestController
 @RequestMapping("/customer")
 public class CustomerController {
@@ -35,6 +36,11 @@ public class CustomerController {
             return new ApiResponse(false, "添加客户失败", "客户姓名不能为空");
         }
 
+        // 检查数据库中是否已存在相同的用户
+        if (customerService.isCustomerExists(customer)) {
+            return new ApiResponse(false, "添加客户失败", "该客户已存在");
+        }
+
         try {
             // 调用服务层方法，将客户数据插入数据库
             customerService.addCustomer(customer);
@@ -44,5 +50,4 @@ public class CustomerController {
             return new ApiResponse(false, "添加客户失败", "添加客户时发生错误");
         }
     }
-
 }
