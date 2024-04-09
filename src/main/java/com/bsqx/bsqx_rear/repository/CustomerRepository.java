@@ -3,6 +3,8 @@ package com.bsqx.bsqx_rear.repository;
 import com.bsqx.bsqx_rear.DTO.Customer;
 import org.springframework.data.jpa.repository.JpaRepository;
 
+import java.util.List;
+
 /**
  * # -*- coding: utf-8 -*-
  *
@@ -13,7 +15,10 @@ import org.springframework.data.jpa.repository.JpaRepository;
  * @IDE ：IntelliJ IDEA 2021.2.2
  * @Motto ：ABC(Always Be Coding)
  */
-public interface CustomerRepository  extends JpaRepository<Customer,Long> {
+public interface CustomerRepository extends JpaRepository<Customer, Long> {
     // 根据姓名和联系方式查找客户
     Customer findByNameAndContactNumber(String name, String contactNumber);
+    // 根据姓名查找客户
+    List<Customer> findByName(String name);
 }
+

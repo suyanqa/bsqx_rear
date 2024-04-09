@@ -2,6 +2,8 @@ package com.bsqx.bsqx_rear.service;
 
 import com.bsqx.bsqx_rear.DTO.Customer;
 
+import java.util.List;
+
 /**
  * # -*- coding: utf-8 -*-
  *
@@ -13,6 +15,7 @@ import com.bsqx.bsqx_rear.DTO.Customer;
  * @Motto ：ABC(Always Be Coding)
  */
 public interface CustomerService {
+    List<Customer> searchCustomersByUsername(String name);
 
     // 检查数据库中是否已存在相同的用户
     boolean isCustomerExists(Customer customer);

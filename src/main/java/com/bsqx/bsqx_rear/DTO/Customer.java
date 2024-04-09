@@ -64,4 +64,14 @@ public class Customer {
     public void setId(Long id) {
         this.id = id;
     }
+
+    @Override
+    public String toString() {
+        return "Customer{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", contactNumber='" + contactNumber + '\'' +
+                ", additionalContactNumber='" + additionalContactNumber + '\'' +
+                '}';
+    }
 }

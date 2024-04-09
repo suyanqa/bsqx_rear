@@ -5,6 +5,9 @@ import com.bsqx.bsqx_rear.repository.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * # -*- coding: utf-8 -*-
  *
@@ -38,4 +41,20 @@ public class CustomerServiceImpl implements CustomerService {
     public void addCustomer(Customer customer) {
         customerRepository.save(customer);
     }
+
+    @Override
+    public List<Customer> searchCustomersByUsername(String name) {
+        // 根据用户名查询客户信息
+        List<Customer> customers = customerRepository.findByName(name);
+
+        // 如果查询结果为空，则返回空列表
+        if (customers.isEmpty()) {
+            return new ArrayList<>(); // 或者抛出一个合适的异常
+        }
+
+        return customers;
+    }
+
+
+
 }
