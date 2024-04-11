@@ -55,6 +55,22 @@ public class CustomerServiceImpl implements CustomerService {
         return customers;
     }
 
+    @Override
+    public List<Customer> getAllCustomers() {
+        return customerRepository.findAll();
+    }
+
+    @Override
+    // 根据用户名模糊查询客户信息
+    public List<Customer> searchCustomersByUsernameContaining(String username) {
+        return customerRepository.findByNameContaining(username);
+    }
+
+    @Override
+    public Customer getCustomerById(Long id) {
+        return customerRepository.findById(id).orElse(null);
+    }
+
 
 
 }

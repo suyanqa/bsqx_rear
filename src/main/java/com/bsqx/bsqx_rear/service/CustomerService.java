@@ -15,11 +15,11 @@ import java.util.List;
  * @Motto ：ABC(Always Be Coding)
  */
 public interface CustomerService {
-    List<Customer> searchCustomersByUsername(String name);
-
-    // 检查数据库中是否已存在相同的用户
     boolean isCustomerExists(Customer customer);
-
-    // 添加客户
     void addCustomer(Customer customer);
+    List<Customer> searchCustomersByUsername(String name);
+    List<Customer> getAllCustomers();
+    List<Customer> searchCustomersByUsernameContaining(String username); // 声明模糊查询方法
+    Customer getCustomerById(Long id);
+
 }
