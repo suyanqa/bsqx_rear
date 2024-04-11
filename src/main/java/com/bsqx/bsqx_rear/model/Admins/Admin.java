@@ -1,4 +1,4 @@
-package com.bsqx.bsqx_rear.model;
+package com.bsqx.bsqx_rear.model.Admins;
 
 import jakarta.persistence.*;
 

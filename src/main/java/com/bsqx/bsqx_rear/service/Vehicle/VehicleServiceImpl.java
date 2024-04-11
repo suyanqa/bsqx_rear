@@ -1,7 +1,8 @@
-package com.bsqx.bsqx_rear.service;
+package com.bsqx.bsqx_rear.service.Vehicle;
 
-import com.bsqx.bsqx_rear.DTO.Vehicle;
-import com.bsqx.bsqx_rear.repository.VehicleRepository;
+import com.bsqx.bsqx_rear.DTO.Vehicle.Vehicle;
+import com.bsqx.bsqx_rear.repository.Vehicle.VehicleRepository;
+import com.bsqx.bsqx_rear.service.Vehicle.VehicleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

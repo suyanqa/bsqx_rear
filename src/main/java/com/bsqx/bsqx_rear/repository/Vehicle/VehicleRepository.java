@@ -1,6 +1,6 @@
-package com.bsqx.bsqx_rear.repository;
+package com.bsqx.bsqx_rear.repository.Vehicle;
 
-import com.bsqx.bsqx_rear.DTO.Vehicle;
+import com.bsqx.bsqx_rear.DTO.Vehicle.Vehicle;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 /**

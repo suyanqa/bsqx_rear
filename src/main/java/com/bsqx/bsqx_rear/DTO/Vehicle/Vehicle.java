@@ -1,4 +1,4 @@
-package com.bsqx.bsqx_rear.DTO;
+package com.bsqx.bsqx_rear.DTO.Vehicle;
 
 import jakarta.persistence.*;
 

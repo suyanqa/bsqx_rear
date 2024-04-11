@@ -1,8 +1,8 @@
-package com.bsqx.bsqx_rear.controller;
+package com.bsqx.bsqx_rear.controller.Vehicle;
 
-import com.bsqx.bsqx_rear.DTO.Vehicle;
+import com.bsqx.bsqx_rear.DTO.Vehicle.Vehicle;
 import com.bsqx.bsqx_rear.response.ApiResponse;
-import com.bsqx.bsqx_rear.service.VehicleService;
+import com.bsqx.bsqx_rear.service.Vehicle.VehicleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

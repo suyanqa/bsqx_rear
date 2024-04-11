@@ -1,7 +1,8 @@
-package com.bsqx.bsqx_rear.service;
+package com.bsqx.bsqx_rear.service.Customer;
 
-import com.bsqx.bsqx_rear.DTO.Customer;
-import com.bsqx.bsqx_rear.repository.CustomerRepository;
+import com.bsqx.bsqx_rear.DTO.Customer.Customer;
+import com.bsqx.bsqx_rear.repository.Customer.CustomerRepository;
+import com.bsqx.bsqx_rear.service.Customer.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -71,6 +72,14 @@ public class CustomerServiceImpl implements CustomerService {
         return customerRepository.findById(id).orElse(null);
     }
 
-
+    @Override
+    public void deleteCustomer(Long id) {
+        // 根据ID从数据库中查找客户
+        Customer customer = customerRepository.findById(id).orElse(null);
+        if (customer != null) {
+            // 如果找到了客户，则删除客户
+            customerRepository.delete(customer);
+        }
+    }
 
 }

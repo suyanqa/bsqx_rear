@@ -1,6 +1,6 @@
-package com.bsqx.bsqx_rear.repository;
+package com.bsqx.bsqx_rear.repository.Customer;
 
-import com.bsqx.bsqx_rear.DTO.Customer;
+import com.bsqx.bsqx_rear.DTO.Customer.Customer;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

@@ -1,8 +1,8 @@
-package com.bsqx.bsqx_rear.controller;
+package com.bsqx.bsqx_rear.controller.Login;
 
-import com.bsqx.bsqx_rear.repository.AdminLoginRequest;
+import com.bsqx.bsqx_rear.repository.Login.AdminLoginRequest;
 import com.bsqx.bsqx_rear.response.ApiResponse;
-import com.bsqx.bsqx_rear.service.AdminService;
+import com.bsqx.bsqx_rear.service.Login.AdminService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

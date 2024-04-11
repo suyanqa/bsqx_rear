@@ -1,7 +1,6 @@
-package com.bsqx.bsqx_rear.repository;
+package com.bsqx.bsqx_rear.repository.Login;
 
-import com.bsqx.bsqx_rear.model.Admin;
-import org.springframework.boot.autoconfigure.kafka.KafkaProperties;
+import com.bsqx.bsqx_rear.model.Admins.Admin;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

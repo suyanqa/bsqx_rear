@@ -1,7 +1,7 @@
-package com.bsqx.bsqx_rear.service;
+package com.bsqx.bsqx_rear.service.Login;
 
-import com.bsqx.bsqx_rear.model.Admin;
-import com.bsqx.bsqx_rear.repository.AdminRepository;
+import com.bsqx.bsqx_rear.model.Admins.Admin;
+import com.bsqx.bsqx_rear.repository.Login.AdminRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

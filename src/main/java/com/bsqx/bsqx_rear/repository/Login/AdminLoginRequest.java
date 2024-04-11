@@ -1,4 +1,4 @@
-package com.bsqx.bsqx_rear.repository;
+package com.bsqx.bsqx_rear.repository.Login;
 
 /**
  * # -*- coding: utf-8 -*-

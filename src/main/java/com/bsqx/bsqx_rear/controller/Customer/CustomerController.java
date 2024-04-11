@@ -1,8 +1,8 @@
-package com.bsqx.bsqx_rear.controller;
+package com.bsqx.bsqx_rear.controller.Customer;
 import org.springframework.util.StringUtils;
-import com.bsqx.bsqx_rear.DTO.Customer;
+import com.bsqx.bsqx_rear.DTO.Customer.Customer;
 import com.bsqx.bsqx_rear.response.ApiResponse;
-import com.bsqx.bsqx_rear.service.CustomerService;
+import com.bsqx.bsqx_rear.service.Customer.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -112,6 +112,27 @@ public class CustomerController {
         customerService.addCustomer(existingCustomer);
 
         return new ApiResponse(true, "编辑成功", this.getIdCustomers(customerId));
+    }
+
+
+    // 删除客户接口
+    @PostMapping("/delete/{id}")
+    public ApiResponse<Void> deleteCustomer(@PathVariable Long id) {
+        try {
+            // 查询数据库，检查是否存在具有指定ID的客户
+//            System.out.println("请求delete路径携带的id值:"+id);
+            Customer byId = customerService.getCustomerById(id);
+            if (byId != null) {
+                // 调用服务层方法删除客户
+                customerService.deleteCustomer(id);
+                return new ApiResponse<>(true, "删除客户成功", null);
+            } else {
+                return new ApiResponse(false, "删除客户失败", "该客户不存在，无法删除");
+            }
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            return new ApiResponse(false, "删除客户失败", "删除客户时发生错误");
+        }
     }
 
 

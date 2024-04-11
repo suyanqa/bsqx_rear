@@ -1,6 +1,6 @@
-package com.bsqx.bsqx_rear.service;
+package com.bsqx.bsqx_rear.service.Vehicle;
 
-import com.bsqx.bsqx_rear.DTO.Vehicle;
+import com.bsqx.bsqx_rear.DTO.Vehicle.Vehicle;
 
 import java.util.List;
 

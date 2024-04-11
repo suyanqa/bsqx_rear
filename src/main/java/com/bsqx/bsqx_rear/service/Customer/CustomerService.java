@@ -1,6 +1,6 @@
-package com.bsqx.bsqx_rear.service;
+package com.bsqx.bsqx_rear.service.Customer;
 
-import com.bsqx.bsqx_rear.DTO.Customer;
+import com.bsqx.bsqx_rear.DTO.Customer.Customer;
 
 import java.util.List;
 
@@ -21,5 +21,6 @@ public interface CustomerService {
     List<Customer> getAllCustomers();
     List<Customer> searchCustomersByUsernameContaining(String username); // 声明模糊查询方法
     Customer getCustomerById(Long id);
+    void deleteCustomer(Long id);
 
 }

@@ -1,4 +1,4 @@
-package com.bsqx.bsqx_rear.DTO;
+package com.bsqx.bsqx_rear.DTO.Customer;
 
 import jakarta.persistence.*;
 import org.antlr.v4.runtime.misc.NotNull;
