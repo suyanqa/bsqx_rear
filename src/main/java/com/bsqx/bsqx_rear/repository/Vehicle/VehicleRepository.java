@@ -2,17 +2,27 @@ package com.bsqx.bsqx_rear.repository.Vehicle;
 
 import com.bsqx.bsqx_rear.DTO.Vehicle.Vehicle;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
-/**
- * # -*- coding: utf-8 -*-
- *
- * @Time ： 2024/4/10 22:39
- * @Author ： SuYan
- * @File ：VehicleRepository.java
- * @email: suyan1254088@gmail.com
- * @IDE ：IntelliJ IDEA 2021.2.2
- * @Motto ：ABC(Always Be Coding)
- */
+import java.util.List;
+
+// 车辆数据访问层，用于与数据库交互
+@Repository
 public interface VehicleRepository extends JpaRepository<Vehicle, Long> {
-    boolean existsByLicensePlateAndModel(String licensePlate, String model);
+    // 根据客户ID查找车辆信息
+    List<Vehicle> findByCustomerId(Long customerId);
+
+    // 根据车牌号查找车辆信息
+    List<Vehicle> findByLicensePlate(String licensePlate);
+
+    // 根据车型查找车辆信息
+    List<Vehicle> findByModel(String model);
+
+    // 根据 VIN 码查找车辆信息
+    List<Vehicle> findByVin(String vin);
+
+    List<Vehicle> findByLicensePlateAndModelAndVinAndCustomerId(String licensePlate, String model, String vin, Long customerId);
 }
+
+
+

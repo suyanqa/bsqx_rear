@@ -29,7 +29,6 @@ public class CustomerController {
     // 添加客户路径 /add
     @PostMapping("/add")
     public ApiResponse<Void> addCustomer(@RequestBody Customer customer) {
-        System.out.println(customer);
 
         // 检查必填字段是否为空
         if (customer.getName() == null || customer.getName().isEmpty()) {
@@ -47,7 +46,7 @@ public class CustomerController {
             return new ApiResponse(true, "添加客户成功", "恭喜小主又多一位客户");
         } catch (Exception e) {
             System.out.println(e.getMessage());
-            return new ApiResponse(false, "添加客户失败", "添加客户时发生错误");
+            return new ApiResponse(false, "添加客户失败", "添加车辆失败,服务器开小差了,请稍后再试");
         }
     }
 

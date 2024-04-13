@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 /**
  * # -*- coding: utf-8 -*-
@@ -36,6 +37,15 @@ public class CustomerServiceImpl implements CustomerService {
         // 根据姓名和联系方式查询客户
         Customer existingCustomer = customerRepository.findByNameAndContactNumber(customer.getName(), customer.getContactNumber());
         return existingCustomer != null;
+    }
+
+
+    // 检查数据库中是否已存在相同的用户
+    public boolean isCustomerID(Long id) {
+
+        Optional<Customer> byId = customerRepository.findById(id);
+//        System.out.println("byId: "+ byId.getClass().getName());
+        return byId != null;
     }
 
     @Override
