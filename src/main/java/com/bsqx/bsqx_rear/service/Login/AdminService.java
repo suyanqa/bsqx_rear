@@ -31,7 +31,6 @@ public class AdminService {
 
     public boolean validateAdmin(String username, String password) {
         Admin admin = adminRepository.findByUsernameAndPassword(username, password);
-        System.out.println(admin);
         return admin != null;
     }
 }
