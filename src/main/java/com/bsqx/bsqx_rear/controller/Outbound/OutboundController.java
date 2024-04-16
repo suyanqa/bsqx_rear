@@ -60,7 +60,7 @@ public class OutboundController {
         if (!outbounds.isEmpty()) {
             return new ApiResponse<>(true, "查询成功", outbounds);
         } else {
-            return new ApiResponse<>(false, "未找到配件信息", null);
+            return new ApiResponse<>(false, "出库记录", null);
         }
     }
 

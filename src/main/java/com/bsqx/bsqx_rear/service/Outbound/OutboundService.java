@@ -1,8 +1,7 @@
 package com.bsqx.bsqx_rear.service.Outbound;
 
 import com.bsqx.bsqx_rear.DTO.Outbound.Outbound;
-import com.bsqx.bsqx_rear.repository.OutboundRepository;
-import com.bsqx.bsqx_rear.repository.OutboundServiceImp;
+import com.bsqx.bsqx_rear.repository.Outbound.OutboundRepository;
 import com.bsqx.bsqx_rear.response.ApiResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
