@@ -60,7 +60,7 @@ public class OutboundController {
         if (!outbounds.isEmpty()) {
             return new ApiResponse<>(true, "查询成功", outbounds);
         } else {
-            return new ApiResponse<>(false, "未找到配件信息", null);
+            return new ApiResponse<>(false, "出库记录", null);
         }
     }
 
@@ -72,5 +72,11 @@ public class OutboundController {
     @PostMapping("/delete/{id}")
     public ApiResponse<String> deleteOutboundById(@PathVariable int id) {
         return os.deleteOutboundById(id);
+    }
+
+    @PostMapping("all")
+    public ApiResponse<Outbound> allOutBound() {
+        List<Outbound> outbounds = os.allOutBound();
+        return new ApiResponse(true,"加载成功",outbounds);
     }
 }

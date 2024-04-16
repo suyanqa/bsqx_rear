@@ -1,4 +1,4 @@
-package com.bsqx.bsqx_rear.repository;
+package com.bsqx.bsqx_rear.repository.Outbound;
 
 import com.bsqx.bsqx_rear.DTO.Outbound.Outbound;
 import org.springframework.data.jpa.repository.JpaRepository;

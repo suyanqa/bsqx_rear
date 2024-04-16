@@ -1,8 +1,7 @@
 package com.bsqx.bsqx_rear.service.Outbound;
 
 import com.bsqx.bsqx_rear.DTO.Outbound.Outbound;
-import com.bsqx.bsqx_rear.repository.OutboundRepository;
-import com.bsqx.bsqx_rear.repository.OutboundServiceImp;
+import com.bsqx.bsqx_rear.repository.Outbound.OutboundRepository;
 import com.bsqx.bsqx_rear.response.ApiResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -123,5 +122,10 @@ public class OutboundService implements OutboundServiceImp {
         } else {
             return new ApiResponse<>(false, "未找到要删除的出库记录", null);
         }
+    }
+
+    @Override
+    public List<Outbound> allOutBound() {
+        return outboundRepository.findAll();
     }
 }

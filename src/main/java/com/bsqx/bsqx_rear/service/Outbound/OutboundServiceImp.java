@@ -1,4 +1,4 @@
-package com.bsqx.bsqx_rear.repository;
+package com.bsqx.bsqx_rear.service.Outbound;
 
 import com.bsqx.bsqx_rear.DTO.Outbound.Outbound;
 import com.bsqx.bsqx_rear.response.ApiResponse;
@@ -23,4 +23,5 @@ public interface OutboundServiceImp {
     ApiResponse<Outbound> editOutbound(int id, Outbound outbound);
 
     ApiResponse<String> deleteOutboundById(int id);
+    List<Outbound> allOutBound();
 }
