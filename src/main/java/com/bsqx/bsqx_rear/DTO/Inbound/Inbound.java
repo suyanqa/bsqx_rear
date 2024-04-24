@@ -24,7 +24,7 @@ public class Inbound {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    private int itemId;
+    private String itemId;
 
     private String itemName;
 
@@ -42,11 +42,11 @@ public class Inbound {
         this.id = id;
     }
 
-    public int getItemId() {
+    public String getItemId() {
         return itemId;
     }
 
-    public void setItemId(int itemId) {
+    public void setItemId(String itemId) {
         this.itemId = itemId;
     }
 
