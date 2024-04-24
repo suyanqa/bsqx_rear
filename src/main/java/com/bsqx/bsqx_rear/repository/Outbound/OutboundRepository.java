@@ -24,6 +24,5 @@ public interface OutboundRepository extends JpaRepository<Outbound, Integer> {
 
     @Query("SELECT o FROM outbound o WHERE o.itemName LIKE %:keyword% OR o.brand LIKE %:keyword% OR o.outboundDate BETWEEN :startDate AND :endDate OR o.id = :id")
     List<Outbound> searchOutboundsByKeywordOrId(String keyword, Date startDate, Date endDate, int id);
-
-    Outbound findByItemId(int itemId);
+    Outbound findByItemId(String itemId);
 }

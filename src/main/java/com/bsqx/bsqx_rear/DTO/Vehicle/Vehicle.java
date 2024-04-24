@@ -32,16 +32,11 @@ public class Vehicle {
     public Vehicle() {
     }
 
-    public Vehicle(Long customerId, String licensePlate, String model, String vin) {
-
-
+    public Vehicle(Long id, Long customerId, String licensePlate, String model, String vin) {
+        this.id = id;
         this.customerId = customerId;
-
-
         this.licensePlate = licensePlate;
         this.model = model;
-
-
         this.vin = vin;
     }
 

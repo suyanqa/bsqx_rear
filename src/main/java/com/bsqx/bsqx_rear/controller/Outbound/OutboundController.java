@@ -35,7 +35,7 @@ public class OutboundController {
     public ApiResponse addOutbound(@RequestBody Outbound outbound) {
 
         System.out.println(outbound);
-        if (outbound.getItemId() < 0) { // 修改条件为小于0
+        if (outbound.getItemId() == null || outbound.getItemId().trim().isEmpty()) {
             return new ApiResponse<>(false, "输入的ID不符合需求", outbound);
         }
 
@@ -46,6 +46,7 @@ public class OutboundController {
             return new ApiResponse<>(false, "相同配件ID的记录已存在", null);
         }
     }
+
 
     @PostMapping("/search")
     public ApiResponse<List<Outbound>> searchOutbound(@RequestBody Map<String, String> requestBody) {

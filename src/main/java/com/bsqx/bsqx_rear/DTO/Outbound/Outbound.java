@@ -28,7 +28,7 @@ public class Outbound {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    private int itemId;
+    private String itemId;
 
     private String itemName;
 
@@ -46,11 +46,12 @@ public class Outbound {
         this.id = id;
     }
 
-    public int getItemId() {
+
+    public String getItemId() {
         return itemId;
     }
 
-    public void setItemId(int itemId) {
+    public void setItemId(String itemId) {
         this.itemId = itemId;
     }
 

@@ -23,6 +23,5 @@ public interface CustomerRepository extends JpaRepository<Customer, Long> {
     // 根据姓名查找客户
     List<Customer> findByName(String name);
     List<Customer> findByNameContaining(String username);
-
 }
 

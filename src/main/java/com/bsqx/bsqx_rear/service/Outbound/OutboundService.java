@@ -35,7 +35,7 @@ public class OutboundService implements OutboundServiceImp {
 
     @Override
     public Outbound addOutbound(Outbound outbound) {
-        int itemId = outbound.getItemId();
+        String itemId = outbound.getItemId();
         // 检查数据库中是否存在相同配件ID的记录
         Outbound existingOutbound = outboundRepository.findByItemId(itemId);
         if (existingOutbound != null) {
@@ -45,6 +45,7 @@ public class OutboundService implements OutboundServiceImp {
         // 如果不存在相同配件ID的记录，则执行添加操作
         return outboundRepository.save(outbound);
     }
+
 
     @Override
     public List<Outbound> searchOutbound(String keyword) {
